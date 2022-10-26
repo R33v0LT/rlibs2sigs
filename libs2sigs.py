@@ -453,7 +453,7 @@ def parse_config(conf_path):
     ARCH = config['Target']['arch']
 
 def rlib_to_sig(libs, target='ida'):
-    parse_config(r'E:\DSEC\rust\rlibs2sigs\config.ini')
+    parse_config(r'config.ini')
 
     all_funcs = list()
     all_modules = list()
