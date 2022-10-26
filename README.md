@@ -1,5 +1,49 @@
 # rlibs2sigs
 
+Plugin for IDA / Cutter / Rizin. Generate signatures for compiled binaries written in Rust using strings containing the names and versions of the used libraries
+
+## Requirements
+
+For IDA plugin:
+
+```bash
+pip install -r requirements-ida.txt
+```
+
+For Rizin / Cutter plugins:
+
+```bash
+pip install -r requirements-rizin.txt
+```
+
+Before running each script, you need to set the necessary parameters in `config.ini`. The `arch` field can be left empty. The `pat` and `sigmake` fields are needed when starting in IDA Pro. They specifies the paths from the generator of the `.pat` file and `sigmake` binary. In other cases, you don't need to set them
+
+In `libs2sigs.py` you must specify path to `config.ini` in `rlib_to_sig` function
+
+## Installion and usage
+
+### IDA Pro
+
+Run script (alt+f7) `get_rust_libs_ida.py` from IDA Pro after its analyze of necessary binary
+
+### Rizin
+
+Run `get_rust_libs_rizin.py` script:
+
+```bash
+python get_rust_libs_rizin.py
+```
+
+### Cutter
+
+1. Add to startup options of `Cutter.exe` flag `--no-output-redirect` or use it when running from console
+2. Copy `libs2sigs.py` into `get_rust_libs_cutter` directory
+3. Move it to directory for Cutter Python plugins (`path/to/Cutter/plugins/python` by default)
+4. Script will run automatically after starting `Cutter`
+
+=================================================================================================================================================================
+
+
 Плагин для IDA / Cutter / Rizin. Создает сигнатуры для собранных бинарных файлов на Rust на основе строк, содержащих названия и версии используемых библиотек
 
 ## Подготовка
