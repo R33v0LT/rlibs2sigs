@@ -13,7 +13,7 @@ class DockWidget(cutter.CutterDockWidget):
             "seekChanged(RVA)"), self.update_contents)
 
     def update_contents(self):
-        pattern = re.compile(r'([\w\d\-_]+)-(\d\.\d\.\d)')
+        pattern = re.compile(r'([\w\d\-_]+)-(\d\.\d+\.\d+)')
         libs = set(re.findall(pattern, cutter.cmd('izQ')))
 
         libs2sigs.rlib_to_sig(libs, 'rizin')

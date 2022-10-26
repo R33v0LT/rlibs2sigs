@@ -4,7 +4,7 @@ import libs2sigs
 
 sc = idautils.Strings()
 
-pattern = re.compile(r'([\w\d\-_]+)-(\d\.\d\.\d)')
+pattern = re.compile(r'([\w\d\-_]+)-(\d\.\d+\.\d+)')
 libs = set(re.findall(pattern, ''.join(map(str, sc))))
 
 print('Found %d libraries!' % len(libs))

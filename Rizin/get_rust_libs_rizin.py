@@ -4,7 +4,7 @@ import rzpipe
 import libs2sigs
 
 binary_path = './lib.so'
-pattern = re.compile(r'([\w\d\-_]+)-(\d\.\d\.\d)')
+pattern = re.compile(r'([\w\d\-_]+)-(\d+\.\d+\.\d+)')
 
 rz = rzpipe.open(binary_path)
 rz.cmd('aa')
